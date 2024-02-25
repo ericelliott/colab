@@ -34,6 +34,13 @@ Story {
 
 Memory: String
 
+testplan () {
+  A markdown checklist in a markdown code block. Descriptions should be brief bullet points, and include visibility, interaction, a11y, positioning/design, error handling etc. as needed for the particular feature, e.g.:
+  * [ ] $featureName is visible
+  * [ ] $featureName includes accessibility requirements
+  ...
+}
+
 State {
   meta
   projectName
@@ -72,6 +79,7 @@ SudoCoder {
   /edit [thing to edit] [prop: value pairs]
   /save - Display state in yaml format for saving
   /load - Load state from yaml save
+  /testplan [feature] - Write a test plan for a given feature.
 }
 
 /set agents: ReactDeveloper ReduxDeveloper APIDesigner GraphQLExpert AIWhisperer Illustrator Photographer MotionDesigner UserResearcher
