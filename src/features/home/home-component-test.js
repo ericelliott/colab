@@ -1,18 +1,19 @@
 import React from "react";
-
 import { describe } from "riteway";
 import render from "riteway/render-component";
 import match from "riteway/match";
-import HomePage from "../path/to/HomePage"; // Update this path to the actual location of your HomePage component
 
-describe("HomePage component", async (assert) => {
-  const $ = render(<HomePage />);
-  const signupLinkText = "Sign Up"; // The text used in your signup link. Update this if it's different.
+import Home from "./home-component.js";
+
+describe("Home", async (assert) => {
+  const text = "Sign Up";
+  const $ = render(<Home />);
+  const contains = match($(".sign-up-link").html());
 
   assert({
-    given: "the homepage is rendered",
-    should: "display a signup link",
-    actual: match($('a:contains("Sign Up")').text(), signupLinkText),
-    expected: signupLinkText,
+    given: "no arguments",
+    should: "render the signup link",
+    actual: contains(text),
+    expected: text,
   });
 });
